@@ -1,0 +1,30 @@
+.reviews {
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 20px;
+  }
+
+  &-img {
+    border-radius: 7px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.04);
+      cursor: pointer;
+    }
+  }
+
+  &-date {
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 15px 0 10px 0;
+  }
+
+  &-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}

@@ -1,0 +1,56 @@
+.new {
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 20px;
+  }
+
+  &-box {
+    position: relative;
+  }
+
+  &-img {
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+      border-radius: 10px;
+    }
+
+    &:hover img {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+
+  &-title,
+  &-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-title {
+    top: 45px;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  &-box:last-child &-title {
+    color: white;
+  }
+
+  &-btn {
+    top: 110px;
+  }
+
+  &-box:first-child &-btn .btn {
+    background-color: $primary-color;
+  }
+
+  &-box:last-child &-btn .btn {
+    color: $primary-color;
+    background-color: $orange-color;
+  }
+}

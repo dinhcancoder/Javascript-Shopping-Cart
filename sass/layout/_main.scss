@@ -1,0 +1,223 @@
+.main {
+  &-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-gap: 0 20px;
+  }
+}
+
+.sidebar {
+  background-color: white;
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgb(240, 240, 240);
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+
+  &-menu {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+      font-size: 1.65rem;
+      font-weight: 600;
+      text-transform: capitalize;
+      color: white;
+      background-color: $primary-color;
+      padding: 15px 20px;
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: calc(100% - 54px);
+    padding: 10px;
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    padding: 12px 10px;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $orange-color;
+    }
+  }
+}
+
+.slide {
+  &-slide {
+    position: relative;
+  }
+
+  &-search {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #f6f7fa;
+
+    input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 5px;
+      background-color: transparent;
+      padding: 0 50px;
+
+      &:focus {
+        outline: 1px solid $primary-color;
+        padding-top: 5px;
+      }
+    }
+
+    span {
+      @include absoluteCenter("top");
+      left: 50px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    ion-icon {
+      @include absoluteCenter("top");
+      font-size: 2.2rem;
+      left: 10px;
+      cursor: pointer;
+    }
+  }
+
+  &-search input:not(:placeholder-shown) + span,
+  &-search input:focus + span {
+    display: block;
+    top: 10px;
+    font-size: 1.3rem;
+  }
+
+  &-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow: hidden;
+  }
+
+  &-image {
+    position: relative;
+
+    img {
+      height: 536.867px;
+    }
+  }
+
+  &-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &-text {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  &-content {
+    @include absoluteCenter("both");
+  }
+
+  &-title {
+    font-size: 3.4rem;
+    text-align: center;
+    color: $primary-color;
+  }
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    gap: 0 12px;
+    margin-top: 25px;
+
+    div {
+      &:first-child {
+        background-color: $orange-color;
+      }
+
+      &:last-child {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &-next,
+  &-prev {
+    @include absoluteCenter("top");
+    color: white;
+    background-color: #ffffffc4;
+    box-shadow: 0 0 3px rgb(248, 248, 248);
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: white;
+      padding: 13px 16px;
+    }
+  }
+
+  &-next {
+    right: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  &-prev {
+    left: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  &-firstLast {
+    position: absolute;
+    display: flex;
+    gap: 0 25px;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+
+    ion-icon {
+      font-size: 2.4rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.break {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+  font-size: 1.5rem;
+  background-color: #deefff;
+  padding: 35px 0;
+  margin: 80px 0;
+}
+
+.cateTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
